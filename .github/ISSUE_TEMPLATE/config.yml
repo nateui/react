@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation and examples
+    url: https://nateui.com/components
+    about: Read component APIs, examples, installation, and theming guidance.
+  - name: Report a security vulnerability
+    url: https://github.com/nateui/react/blob/main/SECURITY.md
+    about: Follow the private reporting instructions in the security policy.

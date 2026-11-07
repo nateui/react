@@ -1,0 +1,535 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+    /* Fonts */
+    --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;    
+
+    /* Semantic surfaces */
+    --color-background: var(--nui-background);
+    --color-canvas: var(--nui-canvas);
+    --color-canvas-border: var(--nui-canvas-border);
+    --color-foreground: var(--nui-foreground);
+    --color-card: var(--nui-card);
+    --color-card-foreground: var(--nui-card-foreground);
+    --color-popover: var(--nui-popover);
+    --color-popover-foreground: var(--nui-popover-foreground);
+    --color-muted: var(--nui-muted);
+    --color-muted-foreground: var(--nui-muted-foreground);
+    --color-border: var(--nui-border);
+    --color-tag: var(--nui-tag);
+    --color-card-border: var(--nui-card-border);
+    --color-tag-border: var(--nui-tag-border);
+    --color-input: var(--nui-input);
+    --color-ring: var(--nui-ring);
+    --color-overlay: var(--nui-overlay);
+    --color-inverse: var(--nui-inverse);
+    --color-inverse-foreground: var(--nui-inverse-foreground);
+
+    /* Form controls */
+    --color-control: var(--nui-control);
+    --color-control-foreground: var(--nui-control-foreground);
+    --color-control-border: var(--nui-control-border);
+    --color-control-focus: var(--nui-control-focus);
+    --color-control-hover: var(--nui-control-hover);
+    --color-control-active: var(--nui-control-active);
+    --color-control-disabled: var(--nui-control-disabled);
+    --color-control-disabled-foreground: var(--nui-control-disabled-foreground);
+
+    /* Intent colors */
+    --color-primary: var(--nui-primary);
+    --color-primary-foreground: var(--nui-primary-foreground);
+    --color-primary-hover: var(--nui-primary-hover);
+    --color-primary-active: var(--nui-primary-active);
+    --color-primary-soft: var(--nui-primary-soft);
+
+    --color-secondary: var(--nui-secondary);
+    --color-secondary-foreground: var(--nui-secondary-foreground);
+    --color-secondary-hover: var(--nui-secondary-hover);
+    --color-secondary-active: var(--nui-secondary-active);
+    --color-secondary-soft: var(--nui-secondary-soft);
+
+    --color-accent: var(--nui-accent);
+    --color-accent-foreground: var(--nui-accent-foreground);
+    --color-accent-hover: var(--nui-accent-hover);
+    --color-accent-active: var(--nui-accent-active);
+
+    --color-destructive: var(--nui-destructive);
+    --color-destructive-foreground: var(--nui-destructive-foreground);
+    --color-destructive-soft: var(--nui-destructive-soft);
+    --color-destructive-soft-foreground: var(--nui-destructive-soft-foreground);
+
+    --color-success: var(--nui-success);
+    --color-success-foreground: var(--nui-success-foreground);
+    --color-success-soft: var(--nui-success-soft);
+    --color-success-soft-foreground: var(--nui-success-soft-foreground);
+    --color-warning: var(--nui-warning);
+    --color-warning-foreground: var(--nui-warning-foreground);
+    --color-warning-soft: var(--nui-warning-soft);
+    --color-warning-soft-foreground: var(--nui-warning-soft-foreground);
+    --color-info: var(--nui-info);
+    --color-info-foreground: var(--nui-info-foreground);
+    --color-info-soft: var(--nui-info-soft);
+    --color-info-soft-foreground: var(--nui-info-soft-foreground);
+
+    /* Product palette */
+    --color-palette-emerald: var(--nui-palette-emerald-solid);
+    --color-palette-emerald-foreground: var(--nui-palette-emerald-foreground);
+    --color-palette-emerald-soft: var(--nui-palette-emerald-soft);
+    --color-palette-emerald-soft-foreground: var(--nui-palette-emerald-soft-foreground);
+
+    --color-palette-rose: var(--nui-palette-rose-solid);
+    --color-palette-rose-foreground: var(--nui-palette-rose-foreground);
+    --color-palette-rose-soft: var(--nui-palette-rose-soft);
+    --color-palette-rose-soft-foreground: var(--nui-palette-rose-soft-foreground);
+
+    --color-palette-blue: var(--nui-palette-blue-solid);
+    --color-palette-blue-foreground: var(--nui-palette-blue-foreground);
+    --color-palette-blue-soft: var(--nui-palette-blue-soft);
+    --color-palette-blue-soft-foreground: var(--nui-palette-blue-soft-foreground);
+
+    --color-palette-cyan: var(--nui-palette-cyan-solid);
+    --color-palette-cyan-foreground: var(--nui-palette-cyan-foreground);
+    --color-palette-cyan-soft: var(--nui-palette-cyan-soft);
+    --color-palette-cyan-soft-foreground: var(--nui-palette-cyan-soft-foreground);
+
+    --color-palette-orange: var(--nui-palette-orange-solid);
+    --color-palette-orange-foreground: var(--nui-palette-orange-foreground);
+    --color-palette-orange-soft: var(--nui-palette-orange-soft);
+    --color-palette-orange-soft-foreground: var(--nui-palette-orange-soft-foreground);
+
+    --color-palette-red: var(--nui-palette-red-solid);
+    --color-palette-red-foreground: var(--nui-palette-red-foreground);
+    --color-palette-red-soft: var(--nui-palette-red-soft);
+    --color-palette-red-soft-foreground: var(--nui-palette-red-soft-foreground);
+
+    --color-palette-purple: var(--nui-palette-purple-solid);
+    --color-palette-purple-foreground: var(--nui-palette-purple-foreground);
+    --color-palette-purple-soft: var(--nui-palette-purple-soft);
+    --color-palette-purple-soft-foreground: var(--nui-palette-purple-soft-foreground);
+
+    --color-palette-yellow: var(--nui-palette-yellow-solid);
+    --color-palette-yellow-foreground: var(--nui-palette-yellow-foreground);
+    --color-palette-yellow-soft: var(--nui-palette-yellow-soft);
+    --color-palette-yellow-soft-foreground: var(--nui-palette-yellow-soft-foreground);
+
+    --color-palette-lime: var(--nui-palette-lime-solid);
+    --color-palette-lime-foreground: var(--nui-palette-lime-foreground);
+    --color-palette-lime-soft: var(--nui-palette-lime-soft);
+    --color-palette-lime-soft-foreground: var(--nui-palette-lime-soft-foreground);
+
+    --color-palette-gray: var(--nui-palette-gray-solid);
+    --color-palette-gray-foreground: var(--nui-palette-gray-foreground);
+    --color-palette-gray-soft: var(--nui-palette-gray-soft);
+    --color-palette-gray-soft-foreground: var(--nui-palette-gray-soft-foreground);
+
+    /* Chart series */
+    --color-chart-1: var(--nui-chart-1);
+    --color-chart-2: var(--nui-chart-2);
+    --color-chart-3: var(--nui-chart-3);
+    --color-chart-4: var(--nui-chart-4);
+    --color-chart-5: var(--nui-chart-5);
+    --color-chart-6: var(--nui-chart-6);
+    --color-chart-7: var(--nui-chart-7);
+    --color-chart-8: var(--nui-chart-8);
+    --color-chart-9: var(--nui-chart-9);
+    --color-chart-10: var(--nui-chart-10);
+
+    /* Shape */
+    --radius-canvas: var(--nui-radius-canvas);
+    --radius-control: var(--nui-radius-control);
+    --radius-control-sm: var(--nui-radius-control-sm);
+    --radius-card: var(--nui-radius-card);
+    --radius-popover: var(--nui-radius-popover);
+    --radius-overlay: var(--nui-radius-overlay);
+    --radius-tag: var(--nui-radius-tag);
+    --radius-badge: var(--nui-radius-badge);
+
+    /* Elevation */
+    --shadow-canvas: var(--nui-shadow-canvas);
+    --shadow-card: var(--nui-shadow-card);
+    --shadow-control: var(--nui-shadow-control);
+    --shadow-popover: var(--nui-shadow-popover);
+    --shadow-dialog: var(--nui-shadow-dialog);
+    --shadow-drawer: var(--nui-shadow-drawer);
+    --shadow-focus: var(--nui-shadow-focus);
+    --shadow-inset-active: var(--nui-shadow-inset-active);
+
+    /* Component sizing */
+    --spacing-control-sm: var(--nui-control-size-sm);
+    --spacing-control-md: var(--nui-control-size-md);
+    --spacing-control-lg: var(--nui-control-size-lg);
+    --spacing-field-x-sm: var(--nui-field-x-sm);
+    --spacing-field-x-md: var(--nui-field-x-md);
+    --spacing-field-x-lg: var(--nui-field-x-lg);
+    --spacing-overlay-gap: var(--nui-overlay-gap);
+
+    /* Layering */
+    --z-index-dropdown: var(--nui-z-dropdown);
+    --z-index-sticky: var(--nui-z-sticky);
+    --z-index-popover: var(--nui-z-popover);
+    --z-index-overlay: var(--nui-z-overlay);
+    --z-index-modal: var(--nui-z-modal);
+    --z-index-toast: var(--nui-z-toast);
+    --z-index-tooltip: var(--nui-z-tooltip);
+
+    /* Focus defaults */
+    --default-ring-width: 1px;
+    --default-ring-color: var(--nui-ring);
+
+    /* Breakpoints */
+    --breakpoint-xs: 576px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+@layer base {
+    :root,
+    .light,
+    [data-theme='light'] {
+        color-scheme: light;
+
+        --nui-font-family: var(--font-sans), Inter, ui-sans-serif, system-ui, sans-serif;
+
+        --nui-neutral-50: #fafafa;
+        --nui-neutral-100: #f3f3f3;
+        --nui-neutral-200: #ebebeb;
+        --nui-neutral-300: #dcdcdc;
+        --nui-neutral-400: #cdcdcd;
+        --nui-neutral-500: #737373;
+        --nui-neutral-600: #5c5c5c;
+        --nui-neutral-700: #454545;
+        --nui-neutral-800: #3A3A3A;
+        --nui-neutral-900: #222222;
+        --nui-neutral-950: #171717;
+
+        --nui-background: var(--nui-neutral-50);
+        --nui-canvas: var(--nui-card);
+        --nui-canvas-border: transparent;
+        --nui-foreground: var(--nui-neutral-900);
+        --nui-card: #ffffff;
+        --nui-card-foreground: var(--nui-neutral-900);
+        --nui-popover: #ffffff;
+        --nui-popover-foreground: var(--nui-neutral-900);
+        --nui-muted: var(--nui-neutral-100);
+        --nui-muted-foreground: var(--nui-neutral-500);
+        --nui-border: var(--nui-neutral-200);
+        --nui-tag: var(--nui-neutral-100);
+        --nui-card-border: var(--nui-neutral-200);
+        --nui-tag-border: var(--nui-neutral-200);
+        --nui-input: var(--nui-neutral-300);
+        --nui-ring: var(--nui-primary);;
+        --nui-overlay: rgb(10 10 10 / 60%);
+        --nui-inverse: var(--nui-neutral-900);
+        --nui-inverse-foreground: #ffffff;
+
+        --nui-control: #ffffff;
+        --nui-control-foreground: var(--nui-neutral-900);
+        --nui-control-border: var(--nui-neutral-300);
+        --nui-control-focus: var(--nui-ring);
+        --nui-control-hover: var(--nui-neutral-100);
+        --nui-control-active: var(--nui-neutral-100);
+        --nui-control-disabled: var(--nui-neutral-100);
+        --nui-control-disabled-foreground: rgb(23 23 23 / 40%);
+
+        --nui-primary: #3380fa;
+        --nui-primary-foreground: #ffffff;
+        --nui-primary-hover: #579afe;
+        --nui-primary-active: #2a6aca;
+        --nui-primary-soft: rgb(51 128 250 / 10%);
+
+        --nui-secondary: var(--nui-neutral-100);
+        --nui-secondary-foreground: var(--nui-neutral-900);
+        --nui-secondary-hover: var(--nui-neutral-200);
+        --nui-secondary-active: var(--nui-neutral-300);
+        --nui-secondary-soft: rgb(23 23 23 / 5%);
+        --nui-accent: var(--nui-neutral-100);
+        --nui-accent-foreground: var(--nui-neutral-800);
+        --nui-accent-hover: var(--nui-neutral-200);
+        --nui-accent-active: var(--nui-neutral-300);
+
+        --nui-destructive: #fd2b38;
+        --nui-destructive-foreground: #ffffff;
+        --nui-destructive-soft: rgb(235 65 55 / 10%);
+        --nui-destructive-soft-foreground: var(--nui-destructive);
+
+        --nui-success: #00a656;
+        --nui-success-foreground: #ffffff;
+        --nui-success-soft: rgba(0 166 86 / 12%);
+        --nui-success-soft-foreground: var(--nui-success);
+
+        --nui-warning: #f59e0b;
+        --nui-warning-foreground: #754729;
+        --nui-warning-soft: rgb(245 158 11 / 16%);
+        --nui-warning-soft-foreground: var(--nui-warning);
+
+        --nui-info: #3380fa;
+        --nui-info-foreground: #ffffff;
+        --nui-info-soft: rgb(23 165 251 / 16%);
+        --nui-info-soft-foreground: var(--nui-info);
+
+        --nui-palette-emerald-solid: #00c27f;
+        --nui-palette-emerald-foreground: var(--nui-neutral-100);
+        --nui-palette-emerald-soft: #09e33830;
+        --nui-palette-emerald-soft-foreground: #1e7151;
+
+        --nui-palette-rose-solid: #f35084;
+        --nui-palette-rose-foreground: var(--nui-neutral-100);
+        --nui-palette-rose-soft: #fb576738;
+        --nui-palette-rose-soft-foreground: #981847;
+
+        --nui-palette-blue-solid: #3380fa;
+        --nui-palette-blue-foreground: var(--nui-neutral-100);
+        --nui-palette-blue-soft: #186bfb1a;
+        --nui-palette-blue-soft-foreground: #314c89;
+
+        --nui-palette-cyan-solid: #05aed3;
+        --nui-palette-cyan-foreground: var(--nui-neutral-100);
+        --nui-palette-cyan-soft: #0cc5f738;
+        --nui-palette-cyan-soft-foreground: #226f81;
+
+        --nui-palette-orange-solid: #ff6a55;
+        --nui-palette-orange-foreground: var(--nui-neutral-100);
+        --nui-palette-orange-soft: #f976134d;
+        --nui-palette-orange-soft-foreground: #9f2f00;
+
+        --nui-palette-red-solid: #fe555d;
+        --nui-palette-red-foreground: var(--nui-neutral-100);
+        --nui-palette-red-soft: #e526102e;
+        --nui-palette-red-soft-foreground: #770c19;
+
+        --nui-palette-purple-solid: #8361cd;
+        --nui-palette-purple-foreground: var(--nui-primary-100);
+        --nui-palette-purple-soft: #44238e17;
+        --nui-palette-purple-soft-foreground: #44238e;
+
+        --nui-palette-yellow-solid: #f3bd31;
+        --nui-palette-yellow-foreground: var(--nui-neutral-100);
+        --nui-palette-yellow-soft: #f5c10d45;
+        --nui-palette-yellow-soft-foreground: #705611;
+
+        --nui-palette-lime-solid: #84cc16;
+        --nui-palette-lime-foreground: var(--nui-neutral-100);
+        --nui-palette-lime-soft: #d0f72f4d;
+        --nui-palette-lime-soft-foreground: #516412;
+
+        --nui-palette-gray-solid: var(--nui-neutral-300);
+        --nui-palette-gray-foreground: var(--nui-neutral-100);
+        --nui-palette-gray-soft: var(--nui-neutral-200);
+        --nui-palette-gray-soft-foreground: var(--nui-neutral-500);
+
+        --nui-chart-1: var(--nui-primary);
+        --nui-chart-2: var(--nui-palette-purple-solid);
+        --nui-chart-3: var(--nui-palette-emerald-solid);
+        --nui-chart-4: var(--nui-palette-yellow-solid);
+        --nui-chart-5: var(--nui-palette-red-solid);
+        --nui-chart-6: var(--nui-palette-orange-solid);
+        --nui-chart-7: var(--nui-palette-cyan-solid);
+        --nui-chart-8: var(--nui-palette-rose-solid);
+        --nui-chart-9: var(--nui-palette-lime-solid);
+        --nui-chart-10: var(--nui-palette-gray-solid);
+
+        --nui-radius-xs: 0.125rem;
+        --nui-radius-sm: 0.25rem;
+        --nui-radius-md: 0.375rem;
+        --nui-radius-lg: 0.5rem;
+        --nui-radius-xl: 0.75rem;
+        --nui-radius-2xl: 1rem;
+        --nui-radius-canvas: var(--nui-radius-lg);
+        --nui-radius-control: var(--nui-radius-lg);
+        --nui-radius-control-sm: var(--nui-radius-md);
+        --nui-radius-card: var(--nui-radius-xl);
+        --nui-radius-popover: var(--nui-radius-xl);
+        --nui-radius-overlay: var(--nui-radius-xl);
+        --nui-radius-tag: var(--nui-radius-md);
+        --nui-radius-badge: 9999px;
+
+        --nui-shadow-canvas:
+            0 1px 3px 0 rgb(0 0 0 / 0.1),
+            0 1px 2px -1px rgb(0 0 0 / 0.1);
+        --nui-shadow-card:
+            0 4px 8px 0 rgb(11 11 11 / 8%),
+            0 12px 28px -2px rgb(11 11 11 / 8%);
+        --nui-shadow-control: 0 0 #0000;
+        --nui-shadow-popover:
+            0px 12px 16px -4px rgba(0, 0, 0, 0.0784),
+            0px 4px 6px -2px rgba(0, 0, 0, 0.0314),
+            0px 2px 2px -1px rgba(0, 0, 0, 0.0392);
+        --nui-shadow-dialog:
+            0 0 0 1px rgb(0 0 0 / 2%),
+            0 1px 1px -0.5px rgb(0 0 0 / 2%),
+            0 3px 3px -1.5px rgb(0 0 0 / 2%),
+            0 6px 6px -3px rgb(0 0 0 / 2%),
+            0 12px 12px -6px rgb(0 0 0 / 4%),
+            0 24px 24px -12px rgb(0 0 0 / 4%),
+            0 4px 32px 1px rgb(0 0 0 / 20%);
+        --nui-shadow-drawer:
+            0 24px 64px -12px rgb(10 13 18 / 24%),
+            0 0 0 1px rgb(10 13 18 / 4%);
+        --nui-shadow-focus: 0 0 0 3px rgb(51 128 250 / 18%);
+        --nui-shadow-inset-active:
+            inset 0 0 0 1px rgb(10 13 18 / 6%),
+            inset 0 1px 1px rgb(10 13 18 / 4%);
+
+        --nui-control-size-sm: calc(var(--spacing) * 8);
+        --nui-control-size-md: calc(var(--spacing) * 9);
+        --nui-control-size-lg: calc(var(--spacing) * 12);
+        --nui-field-x-sm: 0.75rem;
+        --nui-field-x-md: 1rem;
+        --nui-field-x-lg: 2rem;
+        --nui-overlay-gap: 0.5rem;
+
+        --nui-z-sticky: 1020;
+        
+        --nui-z-overlay: 1100;
+        --nui-z-popover: 1100;
+        --nui-z-dropdown: 1100;
+        --nui-z-modal: 1100;
+        --nui-z-toast: 1200;
+        --nui-z-tooltip: 1300;
+    }
+
+    .dark,
+    [data-theme='dark'] {
+        color-scheme: dark;
+
+        --nui-background: #121212;
+        --nui-canvas:  var(--nui-neutral-950);
+        --nui-canvas-border: transparent;
+        --nui-foreground: var(--nui-neutral-100);
+        --nui-card: var(--nui-neutral-900);
+        --nui-card-foreground: var(--nui-neutral-100);
+        --nui-popover: var(--nui-neutral-900);
+        --nui-popover-foreground: var(--nui-neutral-100);
+        --nui-muted: var(--nui-neutral-800);
+        --nui-muted-foreground: var(--nui-neutral-400);
+        --nui-border: color-mix(in srgb, var(--nui-neutral-800) 81%, #000 19%);
+        --nui-tag: var(--nui-neutral-800);
+        --nui-card-border: var(--nui-card);
+        --nui-tag-border: var(--nui-neutral-800);
+        --nui-input: var(--nui-neutral-600);
+        --nui-ring: var(--nui-primary-hover);
+        --nui-overlay: rgb(0 0 0 / 55%);
+        --nui-inverse: #ffffff;
+        --nui-inverse-foreground: var(--nui-neutral-950);
+
+        --nui-control: rgb(255 255 255 / 4%);
+        --nui-control-foreground: var(--nui-neutral-100);
+        --nui-control-border:rgb(255 255 255 / 4%);
+        --nui-control-focus: var(--nui-ring);
+        --nui-control-hover: var(--nui-neutral-800);
+        --nui-control-active: var(--nui-neutral-700);
+        --nui-control-disabled: rgb(255 255 255 / 5%);
+        --nui-control-disabled-foreground: rgb(245 245 245 / 18%);
+
+        --nui-primary-soft: rgb(87 154 254 / 16%);
+        --nui-secondary: color-mix(in srgb, var(--nui-neutral-800) 81%, #000 19%);
+        --nui-secondary-foreground: var(--nui-neutral-100);
+        --nui-secondary-hover: var(--nui-neutral-700);
+        --nui-secondary-active: var(--nui-neutral-600);
+        --nui-secondary-soft: rgb(255 255 255 / 10%);
+        --nui-accent: var(--nui-secondary);
+        --nui-accent-foreground: var(--nui-neutral-100);
+        --nui-accent-hover: var(--nui-neutral-800);
+        --nui-accent-active: var(--nui-neutral-800);
+
+        --nui-destructive-soft: rgb(235 65 55 / 16%);
+        --nui-destructive-soft-foreground: var(--nui-destructive);
+
+        --nui-palette-emerald-foreground: var(--nui-neutral-100);
+        --nui-palette-rose-foreground: var(--nui-neutral-100);
+        --nui-palette-blue-foreground: var(--nui-neutral-100);
+        --nui-palette-cyan-foreground: var(--nui-neutral-100);
+        --nui-palette-orange-foreground: var(--nui-neutral-100);
+        --nui-palette-red-foreground: var(--nui-neutral-100);
+        --nui-palette-purple-foreground: var(--nui-neutral-100);
+        --nui-palette-yellow-foreground: var(--nui-neutral-100);
+        --nui-palette-lime-foreground: var(--nui-neutral-100);
+        --nui-palette-gray-foreground: var(--nui-neutral-100);
+        --nui-success-soft-foreground: var(--nui-success);
+        --nui-warning-soft-foreground: var(--nui-warning);
+        --nui-info-soft-foreground: var(--nui-info);
+        --nui-success-soft: rgb(0 166 86 / 16%);
+        --nui-warning-soft: rgb(245 158 11 / 18%);
+        --nui-info-soft: rgb(51 128 250 / 16%);
+
+        --nui-palette-emerald-soft: #09e33838;
+        --nui-palette-emerald-soft-foreground: #9aebcc;
+
+        --nui-palette-rose-soft: #fb576738;
+        --nui-palette-rose-soft-foreground: #f5c5d7;
+
+        --nui-palette-blue-soft: #2336568f;
+        --nui-palette-blue-soft-foreground: #bfd2fb;
+
+        --nui-palette-cyan-soft: #0cc5f738;
+        --nui-palette-cyan-soft-foreground: #a9e5f3;
+
+        --nui-palette-orange-soft: #f9761336;
+        --nui-palette-orange-soft-foreground: #f7cbb8;
+
+        --nui-palette-red-soft: #873e3640;
+        --nui-palette-red-soft-foreground: #f9ced3;
+
+        --nui-palette-purple-soft: #44238e91;
+        --nui-palette-purple-soft-foreground: #ddd0fb;
+
+        --nui-palette-yellow-soft: #f5c10d45;
+        --nui-palette-yellow-soft-foreground: #f5dd9c;
+
+        --nui-palette-lime-soft: #d0f72f4d;
+        --nui-palette-lime-soft-foreground: #f2ffbc;
+
+        --nui-palette-gray-solid: var(--nui-neutral-700);
+        --nui-palette-gray-soft: var(--nui-neutral-500);
+        --nui-palette-gray-soft-foreground: var(--nui-neutral-100);
+
+        --nui-radius-canvas: var(--nui-radius-lg);
+        --nui-shadow-canvas:
+            0 1px 3px 0 rgb(0 0 0 / 0.1),
+            0 1px 2px -1px rgb(0 0 0 / 0.1);
+        --nui-shadow-card:
+            0 1px 2px 0 rgb(0 0 0 / 30%),
+            0 0 0 1px rgb(255 255 255 / 6%);
+        --nui-shadow-control: 0 0 #0000;
+        --nui-shadow-popover:
+            0 24px 48px -12px rgb(0 0 0 / 45%),
+            0 0 0 1px rgb(255 255 255 / 7%);
+        --nui-shadow-dialog:
+            0 24px 64px -12px rgb(0 0 0 / 56%),
+            0 0 0 1px rgb(255 255 255 / 7%);
+        --nui-shadow-drawer:
+            0 24px 64px -12px rgb(0 0 0 / 56%),
+            0 0 0 1px rgb(255 255 255 / 7%);
+        --nui-shadow-focus: 0 0 0 3px rgb(87 154 254 / 24%);
+        --nui-shadow-inset-active:
+            inset 0 -2px 1px rgb(0 0 0 / 40%),
+            inset 0 1px 1px rgb(255 255 255 / 11%);
+    }
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-border, currentColor);
+    }
+
+    @layer base {
+        * {
+            @apply border-border outline-ring/50;
+        }
+        body {
+            @apply bg-background text-foreground;
+        }
+        html {
+            @apply font-sans;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.sweep {
+    animation: shimmer-sweep 2s linear infinite;
+}
+
+@keyframes shimmer-sweep {
+    from {
+        background-position: 200% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sweep {
+        animation: none;
+    }
+}

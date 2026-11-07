@@ -1,0 +1,51 @@
+name: Report a bug
+description: Report a problem with a free NateUI component.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For security vulnerabilities, follow [SECURITY.md](https://github.com/nateui/react/blob/main/SECURITY.md).
+        Remove credentials and private data from code, logs, and screenshots.
+  - type: input
+    id: component
+    attributes:
+      label: Affected component
+      placeholder: Button, Select, Dialog
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Link a small reproduction or provide the code and steps needed to trigger the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happens instead? Include relevant error output or screenshots.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include React, Tailwind CSS, framework, browser, and operating system versions.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source revision
+      description: Link the source commit or give the date you copied the component.
+    validations:
+      required: false

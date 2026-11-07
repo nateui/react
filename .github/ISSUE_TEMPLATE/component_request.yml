@@ -1,0 +1,32 @@
+name: Request a component
+description: Suggest a component or a change to an existing one.
+title: "[Request] "
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component or feature
+      description: Give the component or change a short name.
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Task to support
+      description: What are you trying to build, and what do the existing components not cover?
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected behavior
+      description: Describe the interactions and states the component needs.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Add links, screenshots, or a sketch that help explain the request.
+    validations:
+      required: false
