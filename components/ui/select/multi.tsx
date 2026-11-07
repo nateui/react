@@ -516,8 +516,8 @@ const Multi = <ExtraOption,>(props: SelectMultiProps<ExtraOption>) => {
                     <div
                         className={classNames(
                             'select-tag-wrapper flex items-center gap-1 flex-wrap',
-                            CONTROL_SIZES[selectSize].h,
-                            selectedItems.length > 0 && 'has-value px-1.5',
+                            CONTROL_SIZES[selectSize].minH,
+                            selectedItems.length > 0 && 'has-value px-1.5 py-1',
                             selectClassNames?.value,
                         )}
                     >
