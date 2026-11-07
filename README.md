@@ -2,26 +2,82 @@
   <a href="https://nateui.com">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.svg">
-      <img src=".github/assets/logo-light.svg" alt="NateUI" width="200" height="52">
+      <img src=".github/assets/logo-light.svg" alt="NateUI" width="160" height="42">
     </picture>
   </a>
 </p>
 
-<h1 align="center">NateUI React</h1>
-
-<p align="center">React 19 · Tailwind CSS 4 · TypeScript · MIT</p>
+<p align="center">
+  <a href="https://nateui.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/readme/banner-dark.webp">
+      <img alt="NateUI: The React UI with a thousand faces. A profile card, a subscriptions table and insight cards built from NateUI components." src=".github/assets/readme/banner-light.webp" width="100%">
+    </picture>
+  </a>
+</p>
 
 <p align="center">
-  <a href="https://nateui.com/components">Components</a> ·
-  <a href="#installation">Installation</a> ·
-  <a href="https://nateui.com/components/theming">Theming</a> ·
-  <a href="https://nateui.com/themes">Theme Editor</a> ·
-  <a href="https://nateui.com/pricing">Pro</a>
+  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111111?style=flat-square"></a>
+  <img alt="React 19" src="https://img.shields.io/badge/React-19-111111?style=flat-square">
+  <img alt="Tailwind CSS 4" src="https://img.shields.io/badge/Tailwind%20CSS-4-111111?style=flat-square">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-111111?style=flat-square">
+  <a href="https://x.com/nate_ui"><img alt="Follow @nate_ui on X" src="https://img.shields.io/badge/X-%40nate__ui-111111?style=flat-square&logo=x"></a>
+</p>
+
+<p align="center">
+  <a href="https://nateui.com"><b>Website</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://nateui.com/components"><b>Components</b></a>
+  &nbsp;·&nbsp;
+  <a href="#installation"><b>Install</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://nateui.com/themes"><b>Theme Workbench</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://nateui.com/pricing"><b>Pro</b></a>
 </p>
 
 NateUI is a React UI component library built with Tailwind CSS and TypeScript. This repository contains the free component source, shared hooks and utilities, and the base theme stylesheet. Copy the source into your application, import it locally, and adapt it to your project.
 
 Component documentation and interactive examples are available at [nateui.com/components](https://nateui.com/components). The source in this repository is licensed under [MIT](LICENSE).
+
+## Showcase
+
+The same screen in four of the styles from the [Theme Workbench](https://nateui.com/themes), captured from [nateui.com](https://nateui.com), where you can switch between them live. Some pieces shown are part of [NateUI Pro](https://nateui.com/pricing) and are not in this repository.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="https://nateui.com/themes"><picture>
+<source media="(prefers-color-scheme: dark)" srcset=".github/assets/readme/look-default-dark.webp">
+<img alt="Profile card and subscriptions table in the Default style" src=".github/assets/readme/look-default-light.webp" width="100%">
+</picture></a>
+<br><b>Default</b>
+</td>
+<td width="50%" valign="top">
+<a href="https://nateui.com/themes"><picture>
+<source media="(prefers-color-scheme: dark)" srcset=".github/assets/readme/look-neobrutalism-dark.webp">
+<img alt="Profile card and subscriptions table in the Neobrutalism style" src=".github/assets/readme/look-neobrutalism-light.webp" width="100%">
+</picture></a>
+<br><b>Neobrutalism</b>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://nateui.com/themes"><picture>
+<source media="(prefers-color-scheme: dark)" srcset=".github/assets/readme/look-glassmorphism-dark.webp">
+<img alt="Profile card and subscriptions table in the Glassmorphism style" src=".github/assets/readme/look-glassmorphism-light.webp" width="100%">
+</picture></a>
+<br><b>Glassmorphism</b>
+</td>
+<td width="50%" valign="top">
+<a href="https://nateui.com/themes"><picture>
+<source media="(prefers-color-scheme: dark)" srcset=".github/assets/readme/look-neomorphism-dark.webp">
+<img alt="Profile card and subscriptions table in the Neomorphism style" src=".github/assets/readme/look-neomorphism-light.webp" width="100%">
+</picture></a>
+<br><b>Neomorphism</b>
+</td>
+</tr>
+</table>
 
 ## Contents
 
@@ -153,7 +209,25 @@ Browse a component's documentation for its API and examples, or open its source 
 | Import alias | `@/*` mapped to your application's source folder |
 | CSS modules | Support for imported `.module.css` files, used by Shimmer |
 
-The steps below install source into an existing project. Follow your framework's Tailwind CSS 4 setup first, or refer to the [installation guide](https://nateui.com/components/installation).
+### Quick start with the CLI
+
+Start a new app with the theme and every free component in place:
+
+```bash
+npx @nateui/cli@latest init --nextjs my-app
+```
+
+Use `--vite` instead of `--nextjs` for a Vite app. In a project you already have, add components one at a time; `add` copies the component, everything it imports, and its npm packages:
+
+```bash
+npx @nateui/cli@latest add button
+```
+
+The CLI needs no account for the free components. Set up the theme and the `@/` path once before your first `add`, as described in the [installation guide](https://nateui.com/components/installation) and in the manual steps below. See the [CLI reference](https://nateui.com/components/cli) for every command.
+
+### Manual installation
+
+The steps below copy source into an existing project by hand. Follow your framework's Tailwind CSS 4 setup first, or refer to the [installation guide](https://nateui.com/components/installation).
 
 ### Install dependencies
 
@@ -161,7 +235,7 @@ If you are copying the full component set, install these packages in your applic
 
 ```bash
 npm install @floating-ui/react motion dayjs clsx tailwind-merge
-npm install -D @tailwindcss/typography@
+npm install -D @tailwindcss/typography
 ```
 
 | Package | Used for |
@@ -319,9 +393,9 @@ export function Providers({ children, mode = 'light' }: ProvidersProps) {
 
 Wrap the relevant part of your app with `<Providers>`. An explicit prop on a component takes precedence over its provider default. `classNames` targets named slots; use the provider's [API reference](https://nateui.com/components/config-provider) to find the supported slot names.
 
-### Theme Editor
+### Theme Workbench
 
-The [Theme Editor](https://nateui.com/themes) lets you explore component appearance and adjust colors, typography, density, and component styles. See the [theming guide](https://nateui.com/components/theming) for applying a theme's CSS and provider configuration to your application.
+The [Theme Workbench](https://nateui.com/themes) lets you explore component appearance and adjust colors, typography, density, and component styles. See the [theming guide](https://nateui.com/components/theming) for applying a theme's CSS and provider configuration to your application.
 
 ## AI tools and resources
 
@@ -332,7 +406,7 @@ Use the actual component source and public documentation when working with codin
 | [Components](https://nateui.com/components) | Component APIs, examples, and file dependencies |
 | [Installation](https://nateui.com/components/installation) | Theme, alias, and framework setup |
 | [Theming](https://nateui.com/components/theming) | Tokens, component defaults, and style slots |
-| [Theme Editor](https://nateui.com/themes) | Interactive theme exploration |
+| [Theme Workbench](https://nateui.com/themes) | Interactive theme exploration |
 | [MCP setup](https://nateui.com/components/mcp) | Connecting an AI tool to the NateUI catalog and documentation |
 | [Agent skills](https://nateui.com/components/agent-skills) | NateUI usage guidance for coding agents |
 
